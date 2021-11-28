@@ -311,8 +311,15 @@ img {
 .work-item {
   position: relative;
 }
+.container-work-example {
+  background: rgba(47, 48, 58, 0.8);
+  width: 100%;
+  position: absolute;
+  padding: 27px 82px;
+  left: 0;
+  bottom: 0;
+}
 .work-example {
-  font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 1.14;
@@ -320,12 +327,6 @@ img {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--secondary-text-color);
-  background: rgba(47, 48, 58, 0.8);
-  width: 370px;
-  height: 70px;
-  position: absolute;
-  bottom: 0;
-  padding: 27px 82px;
 }
 .section-work {
   padding-top: 47px;
@@ -380,11 +381,11 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color var(--transition-cubic), fill var(--transition-cubic);
 }
 .teammate-social-link:hover,
 .teammate-social-link:focus {
   background-color: var(--accent-color);
+  transition: background-color var(--transition-cubic);
 }
 .teammate-social-link:hover .teammate-social-icon,
 .teammate-social-link:focus .teammate-social-icon {
@@ -416,7 +417,7 @@ img {
   border: 1px solid var(--border-clients-color);
   border-radius: 4px;
   color: #afb1b8;
-  transition: border var(--transition-cubic), var(--transition-cubic);
+  transition: border var(--transition-cubic), color var(--transition-cubic);
 }
 .client-link:hover,
 .client-link:focus {
@@ -564,6 +565,9 @@ img {
   transition: transform 250ms;
 }
 .backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
@@ -573,7 +577,7 @@ img {
   transition: opacity 250ms, visibility 250ms;
 }
 .backdrop.is-hidden .modal {
-  transform: scale(1.5);
+  transform: scale(0.7);
 }
 .modal {
   width: 528px;
@@ -581,15 +585,14 @@ img {
   background-color: var(--primary-bgr-color);
   border-radius: 5px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: scale(1) translate(-50%, -50%);
-  transition: transform 250ms;
+  transform: scale(1);
+  transition: transform var(--transition-cubic);
 }
 .modal-close {
+  cursor: pointer;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 8px;
+  right: 8px;
   width: 30px;
   height: 30px;
   background-color: transparent;
